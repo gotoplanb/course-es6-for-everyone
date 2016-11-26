@@ -1,0 +1,37 @@
+<html>
+<head>
+  <title>var-let-const</title>
+</head>
+<body>
+  <script>
+    const key = 'abc123'
+    let points = 50;
+    let winner = false;
+
+    if(points > 40) {
+      let winner = true;
+    }
+
+    const person = {
+      name: 'Dave',
+      age: 36
+    }
+
+    // You cannot reassign a constant:
+    // const person = {
+    //   name: 'David',
+    //   age: 37
+    // }
+    // this will fail.
+
+    // but you can update attributes of a constant:
+    person.age = 37;
+    console.log(person.age);
+
+    // You can freeze an object if you do not want attributes to be updatable:
+    const dave = Object.freeze(person);
+    console.log(dave);
+    // now try to update attributes, and you will see the updates fail silently.
+
+  </script>
+</body>
